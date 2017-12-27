@@ -15,7 +15,17 @@ function getComputedName(computed) {
 }
 
 function stringify(val) {
-	return (typeof val !== 'string') ? JSON.stringify(val) : val;
+	if (typeof val === 'string') {
+		return val;
+	}
+	let refs = [];
+	return JSON.stringify(val, (k, v) => {
+		if (typeof v === 'object' && v !== null) {
+			if (refs.includes(v)) return;
+			refs.push(value);
+		}
+		return value;
+	});
 }
 
 const ms = {},
