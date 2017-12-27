@@ -32,7 +32,7 @@ Object.defineProperty(memoryStorage, 'length', { get: () => Object.keys(ms).leng
 const storageComputed = (keyName, defaultValue, modifier, options) => {
 
 	const isModifier = (typeof modifier === 'function'),
-		store = !!options && options.store,
+		store = ((!!options && options.store) || 'local'),
 		cache = !!options && options.cache,
 		sync = !!options && options.sync;
 

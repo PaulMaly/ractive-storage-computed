@@ -45,9 +45,9 @@ const storageComputed = require('ractive-storage-computed');
 
 const $$ = new Ractive({
     computed: {
-        foo: storageComputed('foo', ''), // store in-memory
-        bar: storageComputed('bar', '', null, { store: 'local' }), // use localStorage API
+        foo: storageComputed('foo', ''), // store localStorage API
         baz: storageComputed('baz', '', null, { store: 'session' }), // use sessionStorage API
+        bar: storageComputed('bar', '', null, { store: 'memory' }), // use in-memory
     }
 });
 ```
@@ -90,7 +90,7 @@ const usernameComputed = storageComputed('username', '', function(key, val, keyp
 ```
 
 - The available `options` are:
-  - store: `in-memory` by default. `local` (for localStorage), `session` (for sessionStorage) and any custom Storage interface compatible driver (read below).
+  - store: `local` by default. `session` (for sessionStorage), `memory` (for in-memory),  and any custom Storage interface compatible driver (read below). If Storage API unavailable (for example NodeJS) it'll be autimatically switched to in-memory usage, so you don't need to worry about it.
   - sync:  `true` (default) or `false`; used to sync changes in the storage between browser tabs.
   - cache: `false` (default) or `false`; whether or not to trigger modifier every `get` operation or just get value from the storage as is.
 

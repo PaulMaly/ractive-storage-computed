@@ -52,7 +52,7 @@ Object.defineProperty(memoryStorage, 'length', { get: function get() {
 var storageComputed = function storageComputed(keyName, defaultValue, modifier, options) {
 
 	var isModifier = typeof modifier === 'function',
-	    store = !!options && options.store,
+	    store = !!options && options.store || 'local',
 	    cache = !!options && options.cache,
 	    sync = !!options && options.sync;
 

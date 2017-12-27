@@ -1,6 +1,6 @@
 {
   "name": "ractive-storage-computed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ready-to-use constructor of Ractive's computed properties for Storage interface and compatible things.",
   "main": "dist/index.js",
   "scripts": {
