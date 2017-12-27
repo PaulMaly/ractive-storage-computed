@@ -22,9 +22,9 @@ function stringify(val) {
 	return JSON.stringify(val, (k, v) => {
 		if (typeof v === 'object' && v !== null) {
 			if (refs.includes(v)) return;
-			refs.push(value);
+			refs.push(v);
 		}
-		return value;
+		return v;
 	});
 }
 
