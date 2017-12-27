@@ -1,0 +1,23 @@
+{
+  "name": "ractive-storage-computed",
+  "version": "1.0.1",
+  "description": "Ready-to-use constructor of Ractive's computed properties for Storage interface and compatible things.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel index.js -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ractive",
+    "ractive-library",
+    "library"
+  ],
+  "author": "PaulMaly",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-cli": "^6.0.0"
+  }
+}
