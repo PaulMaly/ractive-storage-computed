@@ -81,7 +81,7 @@ const storageComputed = (keyName, defaultValue, modifier, options) => {
 			!!teardown && ($$.on('teardown', teardown));
 
 			let val = storage.getItem(key);
-			(isModifier && (val === null || ! cache)) && modifier.call($$, key, val, keypath);
+			(isModifier && (val === null || ! cache)) && (val = modifier.call($$, key, val, keypath));
 			!!val || (val = defaultValue);
 
 			return (typeof val !== type) ? JSON.parse(val) : val;

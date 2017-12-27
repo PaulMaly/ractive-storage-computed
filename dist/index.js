@@ -107,7 +107,7 @@ var storageComputed = function storageComputed(keyName, defaultValue, modifier, 
 			!!teardown && $$.on('teardown', teardown);
 
 			var val = storage.getItem(key);
-			isModifier && (val === null || !cache) && modifier.call($$, key, val, keypath);
+			isModifier && (val === null || !cache) && (val = modifier.call($$, key, val, keypath));
 			!!val || (val = defaultValue);
 
 			return (typeof val === 'undefined' ? 'undefined' : _typeof(val)) !== type ? JSON.parse(val) : val;
